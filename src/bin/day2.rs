@@ -12,7 +12,7 @@ struct Subset {
 
 impl Subset {
     fn new(s: &str) -> Subset {
-        let re = Regex::new(r"(\d+)\s(red|green|blue)").unwrap();
+        let re: Regex = Regex::new(r"(\d+)\s(red|green|blue)").unwrap();
         let mut rgb = [0, 0, 0];
         for (_, [n, color]) in re.captures_iter(s).map(|caps| caps.extract()) {
             let n = n.parse::<u32>().unwrap();
