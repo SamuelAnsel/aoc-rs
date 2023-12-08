@@ -90,8 +90,8 @@ fn merge_digits_2(line: &String) -> u32 {
     let mut results : Vec<&str> = vec![];
     for m in matches {
         let digit = match m.parse::<u32>() {
-            Ok(x) => m,
-            Err(x) => digits_hm[m],
+            Ok(_x) => m,
+            Err(_x) => digits_hm[m],
         };
 
         results.append(&mut vec![digit]);
